@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista Tareas App</title>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">    
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        <label for="new-task">Añadir Tarea</label>
+        <input id="new-task" type="text">
+        <button>Añadir</button>
+      </p>
+      
+      <h3>Tareas</h3>
+      <ul id="incomplete-tasks">
+        <li>
+          <input type="checkbox">
+          <label>Pagar facturas</label>
+          <input type="text">
+          <button class="edit">Editar</button>
+          <button class="delete">Borrar</button>
+        </li>
+        <li class="editMode">
+          <input type="checkbox">
+          <label>Comprar agua</label>
+          <input type="text" value="Comprar agua">
+          <button class="edit">Editar</button>
+          <button class="delete">Borrar</button>
+        </li>
+      </ul>
+      
+      <h3>Finalizadas</h3>
+      <ul id="completed-tasks">
+        <li>
+          <input type="checkbox" checked>
+          <label>Ir al médico.</label>
+          <input type="text"><button class="edit">Editar</button>
+          <button class="delete">Borrar</button>
+        </li>
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="js/app.js"></script>
+
+  </body>
+</html>
