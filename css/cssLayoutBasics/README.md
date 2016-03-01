@@ -1,0 +1,3 @@
+## Treehouse CSS Layotus Basics
+
+Aprender a trabajar con métodos de diseño y posicionamiento comunes que se utilizan en el **diseño web**. Vamos a trabajar con las técnicas básicas de diseño **CSS** como "display" y "float". Vamos a usar nuevas habilidades de diseño **CSS** para construir el diseño de una página web sencilla. Vamos a trabajar también como aprender a mejorar el diseño de un "layout" usando "position" relativo, absoluto y fijo.
