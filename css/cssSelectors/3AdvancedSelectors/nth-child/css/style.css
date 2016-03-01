@@ -1,0 +1,25 @@
+/* :nth-child Pseudo-classes------------------ */
+/* selecciona elementos hijos segun la posicion */
+
+/* elementos PARES */
+li:nth-child(even) {
+	background: #52bab3;
+	color: #fff;
+}
+/* elementos IMPARES */
+li:nth-child(odd) {
+	background: #00b001;
+	color: #fff;
+}
+/* uno solo */
+li:nth-child(4) {
+	color: #333;
+}
+/*  Selecciona un ciclo: an+b = Ciclo n + select */
+li:nth-child(2n + 3) {
+	color: orange;
+}
+li:nth-child(-n + 3) {
+	color: yellow;
+}
+

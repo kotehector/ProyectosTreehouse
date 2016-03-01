@@ -1,0 +1,3 @@
+## Treehouse CSS Selectors
+
+Vamos a ir un poco más allá de los conceptos básicos de selección en **CSS**. Además de las formas más comunes para seleccionar elementos por "tipo", "id" y "class", seremos capaces de seleccionar los elementos basados en sus "atributos", "posición" en el documento **HTML**, incluso su relación con otros elementos. Una mejor comprensión de la potencia y flexibilidad detrás de los selectores **CSS**.

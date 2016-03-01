@@ -1,0 +1,59 @@
+/* Pseudo-elements -------------------------------- */
+/* primera linea */
+.intro::first-line {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+/* primera letra */
+.intro::first-letter {
+	color: lightblue;
+	font-size: 80px;
+	float: left;
+	padding: 5px 10px;
+	background-color: #384047;
+	margin: 10px 10px 0 0;
+	border-radius: 5px;
+	line-height: 1;
+}
+
+/* añadir contenido ANTES de un elemento */
+.jpg::before {
+	content: url(../img/icn-picture.svg);
+	margin-right: 8px;
+}
+
+.zip::before {
+	content: url("../img/icn-zip.svg");
+	margin-left: 8px;
+}
+
+/* generar contendiod DESPUES */
+h1::before,
+h1::after {
+	content: "";
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: coral;
+	margin: 0 10px;
+}
+
+/* attr(): selecciona el valor del atributo que queramos y lo inserta despues del elemento */
+.d-loads a::after {
+	content: attr(href);
+	display: inline-block;
+	color: initial;
+	font-size: .65em;
+	margin-left: 5px;
+}
+
+.d-loads a {
+	border: solid 1px;
+}
+
+
+
+
+
