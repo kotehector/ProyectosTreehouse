@@ -1,0 +1,23 @@
+<!-- El $scope del mainCtrl es dentro de este div SOLO -->
+<div class="list">
+  
+    <div class="add">
+      <a href="" ng-click="addTodo()"> + Add new item</a>
+    </div>
+    <div ng-repeat="todo in todos | orderBy: 'completed'" ng-class="{'editing-item': editing, 'editing': todo.edited, 'completed': todo.completed}" ng-init="todo.completed = false" class="item">
+        <input ng-model="todo.completed" type="checkbox" />
+        <span ng-click="todo.completed = !todo.completed; todo.edited = true"></span>
+        <label ng-click="editing = true" ng-hide="editing" ng-click="helloWorld()" class="editing-label">
+          {{todo.name}}
+        </label>
+        <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" type="text" class="editing-label">
+        
+        <div class="actions">
+          <a href="" ng-click=" editing = !editing ">Edit</a>
+          <a ng-click="saveTodos(todo)" href="">Save</a>
+          <!-- $index es el elemento en el iterador -->
+          <a href=""  ng-click="deleteTodo(todo, $index)" class="delete">Delete</a>
+        </div>
+    </div>
+
+</div>
