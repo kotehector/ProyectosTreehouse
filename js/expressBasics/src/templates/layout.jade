@@ -1,0 +1,17 @@
+doctype html
+html(lang="es")
+	include ./partials/_head.jade
+
+	body#page-top
+				include ./partials/_nav.jade
+				block content
+
+
+				script(src='/static/js/jquery.js')
+				// Bootstrap Core Js
+				script(src='/static/js/bootstrap.min.js')
+				// Plugins Js
+				script(src='/static/js/jquery.easing.min.js')
+				script(src='/static/js/jquery.fittext.js')
+				// custom theme js
+				script(src='/static/js/creative.js')
