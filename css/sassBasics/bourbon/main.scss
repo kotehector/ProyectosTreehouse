@@ -1,0 +1,5 @@
+@import "_bourbon.scss";
+
+body {
+	@include linear-gradient(to top, red, orange);
+}

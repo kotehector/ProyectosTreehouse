@@ -1,0 +1,65 @@
+// crear MIXIN
+@mixin roundy ($radius-one, $radius-two){
+	border-radius: $radius-one;
+	border-top-right-radius: $radius-two;
+	border-bottom-left-radius: $radius-two;
+}
+.box {
+	//include MIXIN
+	@include roundy(4px,8px);
+}
+.button {
+	@include roundy(2px, 4px);
+	background: #345;
+}
+
+
+// Crear EXTEND. Utilizamos el % para que no se imprima
+%bar {
+	height: 14px;
+	font-size: 10px;
+	> div {
+		float: left;
+		clear: none;
+	}
+}
+.menu {
+	// extendemos desde BAR
+	@extend %bar;
+	background: #345;
+}
+
+
+// VARIABLES
+$primary-color: #369;
+$margin: 5px;
+$padding: $margin * 1.5;
+
+
+body {
+	background: $primary-color;
+	font-family: Futura, "Trebuchet MS", sans-serif;
+	> h1 {
+		font-size: 3em;
+		color: #eee;
+		margin: $margin 0 0 $margin;
+	}
+}
+
+.entry {
+	background: white;
+	margin: $margin;
+	padding: $padding;
+	h1 {
+		font-size: 1.2em;
+		margin: 0px;
+	}
+	.date {
+		font-size: 0.3em;
+		color: $primary-color;
+	}
+	a {
+		color: $primary-color;
+	}
+}
+

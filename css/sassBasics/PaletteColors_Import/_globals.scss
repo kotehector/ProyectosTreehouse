@@ -1,0 +1,24 @@
+body {
+	background: $background;
+	font-family: sans-serif;
+	color: $text-color;
+	.test-color {
+		width: 100px;
+		height: 100px;
+		float: left;
+	}
+	.desaturado {
+		background: $desaturate-color;
+	}
+	.complementario {
+		background: $complement-color;
+	}
+	.mezcla {
+		background: $mix-color;
+	}
+}
+
+a {
+	color: $lighten-text-color;
+	background: $darken-background;
+}

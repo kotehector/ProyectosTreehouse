@@ -1,0 +1,104 @@
+$color: orange;
+
+// Funciones
+@function pxify($value) {
+	
+	@return unquote($value + "px");
+}
+div {
+	height: 100px;
+	width: 255px;
+	border: 1px solid black;
+}
+.color {
+	background: $color;
+}
+.red, .blue, .green {
+	float: left;
+}
+.red {
+	background: red;
+	width: pxify(red($color));
+}
+.blue {
+	background: blue;
+	width: pxify(blue($color));
+}
+.green {
+	background: green;
+	width: pxify(green($color));
+}
+
+
+
+// Interpolation (#) mete la variable en el mixin
+@mixin color_class($color) {
+	.#{$color} {
+		color: $color;
+		background-image: url('images/#{$color}.jpg');
+		@if $color == orange {
+			border: 1px solid black;
+		}
+	}
+}
+@include color_class(orange);
+@include color_class(gray);
+@include color_class(lightblue);
+
+
+// IF/ELSE
+@mixin box($width) {
+	@if $width > 100px {
+		padding: 0px;
+	} @else if $width == 100px {
+		padding: 5px;
+	} @else {
+		padding: 10px;
+	}
+}
+div {
+	@include box(90px);
+}
+
+
+
+// FOR Loop
+div.box {
+	width: 100%;
+	height: 10px;
+}
+@each $member in thom, jonny, colin {
+	.bandmember .#{$member} {
+		background: url("images/#{$member}.jpg");
+	}
+}
+@for $i from 1 through 100 {
+	.box:nth-child(#{$i}) {
+		background: darken(white, $i)
+	}
+}
+
+
+// Advanced mixins arguments 
+@mixin band($name,$members...) {
+	@each $member in $members {
+		.#{$name} .#{$member} {
+			background: url("images/#{$member}.jpg");
+		}
+	}
+}
+@include band(radiohead,juan,pepe,anton);
+
+
+@mixin container($size: 50px, $color: #333, $display: block) {
+	width: $size;
+	height: $size;
+	background: $color;
+	display: $display;
+}
+
+.container {
+	@include container();
+}
+
+

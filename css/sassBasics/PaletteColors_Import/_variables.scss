@@ -1,0 +1,8 @@
+// PALETA DE COLORES
+$background: #cd3cc1;
+$darken-background: darken($background, 20%); // Oscurecer color
+$text-color: #3ccd48;
+$lighten-text-color: lighten($text-color, 20%); // Aclarar color
+$desaturate-color: desaturate(#e56732, 10%); // Desaturar color
+$complement-color: complement(#e56732); // Color Complementario
+$mix-color: mix($desaturate-color, $complement-color, $weight:50%); // Mezcla de colores
