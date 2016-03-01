@@ -1,0 +1,3 @@
+# Treehouse Gulp Basics
+
+**Gulp.js** es un "taskrunner" para **JavaScript** que le permite automatizar los aspectos importantes de su flujo de trabajo de desarrollo. Con **Gulp** puede hacer cosas como "Minify" y concatenar **JavaScript**, compilar **Sass** a **CSS**, y un montón de otras tareas comunes. Además, **Gulp** es una solución completa, de extremo a extremo, como herramienta de automatización de flujo de trabajo para el desarrollo y el despliegue. 
