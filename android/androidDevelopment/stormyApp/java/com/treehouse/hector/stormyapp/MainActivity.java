@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     private void getForecast(double latitude, double longitude) {
 
         // Construimos URL para servicio HTTP de Forecast
-        String apiKey = "b2134323b784884204d51f5ac368afcc";
+        String apiKey = "AQUÍ VA TU CLAVE PARA LA API DE FORECAST";
 
         String forecastUrl = "https://api.forecast.io/forecast/" + apiKey +"/" + latitude + "," + longitude;
 
