@@ -1,0 +1,16 @@
+{
+    "name": "root/building-websites-with-php",
+    "authors": [
+        {
+            "name": "Hector Menduiña",
+            "email": "kotehector@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.17",
+        "slim/slim": "^3.0",
+        "slim/twig-view": "^2.0",
+        "swiftmailer/swiftmailer": "^5.4",
+        "slim/views": "^0.1.3"
+    }
+}
