@@ -1,0 +1,3 @@
+## Treehouse CSS FlexBox Layout
+
+**Flexbox** es un conjunto de propiedades **CSS** que nos da una forma flexible para estructurar y diseñar nuestro contenido. Con **Flexbox** puede cambiar la dirección, la alineación, el tamaño y el orden de los elementos, independientemente de su tamaño original y el orden en el código HTML. Incluso se puede estirar y encoger los elementos y distribuir el espacio, todo ello con sólo unas pocas líneas de **CSS**!

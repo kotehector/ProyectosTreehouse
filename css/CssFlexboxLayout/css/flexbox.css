@@ -1,0 +1,176 @@
+/* ================================= 
+  Flexbox
+==================================== */
+
+/**********************************************************
+ - Algunas propiedades solo se aplican al "flex-container",
+   mientras que algunas solo a los "flex-item".
+************************************************************/
+
+
+.container {	
+	/* 
+	 * - Creamos el "flex-container"  con la propiedad display:flex.
+	 * - Antes de poder usar la propiedad "flex box" necesitamos definir
+	 *   un "flex-container" en el layout.
+	 * - Por defectos los "flex items" estan dispuestos horizontalmente en
+	 *   el eje principal de izquierda a derecha.
+	 * - Por defecto, los "flex items" se extienden para rellenar la altura
+	 *   del "flex-container".
+	 * - Cualquier elemento fuera del "flex-container" no son afectados
+	 *   por el "flexbox" layout.
+	 * - Los hijos del "flex-container" se convierten automaticamente en
+	 *   "flex-item".
+	 *   flex | inline-flex
+	 */
+	display: flex;
+	
+	/* 
+	 * - Propiedad: flex-direction (solo se aplica al container).
+	 * - Valor por defecto: row.
+	 * - Para invertir la dirección de los "flex-item": row-reverse.
+	 * - El valor de las columnas rota al "main-axis" de modo que
+	 *   los "flex-item" están dispuestas verticalmente.
+	 * - Al igual que con "row-reverse" se puede cambiar la dirección
+	 *   de arriba hacia abajo de una columna con el valor : column-reverse.
+ 	 * - row | row-reverse | column |column-reverse 
+ 	 */
+	flex-direction: row;
+
+	/* 
+	 * - "flex-wrap" es solo para los "flex-container".
+	 * - El "flex-container" expone los "flex-items" en una sola línea llamada
+	 *   "flex-line".
+	 * - El "flex-container" trata de encajar todos los "flex-item" en un sola
+	 *   "flex-line" inluso si hace que su contenido sobresalga (overflow).
+	 * - El "flex-container" puedo romper los "flex-items" en varias "flex-lines"
+	 *   y crear tantas "flex-lines" como se necesiten.
+	 * - Para controlor si el layout del "flex-container" es de solo una linea 
+	 *   o multilinea.
+	 * - Para hacer que rompa en multiples lines tenemos: wrap; 
+	 * no-wrap | wrap | wrap-reverse 
+	 */
+	flex-wrap: wrap;
+
+	/*
+	 * - "justify-content" solo se aplica al "flex-container".
+	 * - "justify-content" nos permite controlar la posición y alineación
+	 *   de los "flex-items" en el eje principal y como el espacio debería
+	 *   ser distribuído en el "flex-container".
+	 * - El valor por defecto es: flex-start; el cúal situa a los "flex-items"
+	 *   de inicio a fin de la "flex-line".
+	 * - Para fijar los "flex-item" al botón del "flex-container": flex-end.
+	 * - Para centrarlos: center.
+	 * - Fijar un espacio igual entre "flex-items": space-between.
+	 * - Para un espacio igual alrededor de cada "flex-item": space-around.
+	 * - El margin en auto absorverá cualquier espacio extra alrededor de los
+	 *   "flex-items" y empuja a los otros "flex-items" a diferentes posiciones.
+	 * flex-start | flex-end | center | space-between | space-around
+	 */
+	justify-content: space-between;
+}
+
+
+.item-6 {
+	/*
+	 * - "order" solo se aplica a los "flex-items"-
+	 * - Podemos usarla para cambiar el order de cualquier "flex-item".
+	 * - Primero puedes estructurar el HTML para SEO o accesibilidad, entonces
+	 *   organizar el contenido sin necesidad de editar el HTML.
+	 * - Por defecto todos los "flex-item": 0.
+	 * - "order" posiciona los "flex-items" en relación a los otros valores de
+	 *   "oreder" en los demás "flex-items".
+	 * - Para situar un "flex-item" antes que otro, necesita tener un valor < que
+	 *   el valor del otro "flex-item".
+	 * - Para situar un "flex-item" después que otro, necesita tener un valor > que
+	 *   el valor del otro "flex-item".
+	 */
+	order: -1;
+}
+
+.item-3 {
+	/*
+	 * - "flex-grow" solo se aplica a los "flex-items".
+	 * - Determina cuanto del espacio disponible dentro del "flex-container" debería
+	 *   un "flex-item" fijar, esto asigna más o menos espacio para "flex-items".
+	 * - Un valor de 1 expande los "flex-items" para ocupar todo el espacio de la linea.
+	 * - Cuanto mayor sea el valor del "flex-grow", más crece el "flex-item" en
+	 *   relación a los demás.
+	 */
+	flex-grow: 4;
+}
+
+
+/* --------------------------------------------------------------------------*/
+
+.smarterLayout .container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 450px;
+	/*
+     * - "align-items" solo se aplica al "flex-container".
+	 * - "align-items" alinea a los "flex-items" verticalmente.
+	 * - "align-items: flex-end;" compacta los "flex-items" hacia el eje transversal.
+	 * - "align-items: center;" centra pefectamente los items en el eje.
+	 */
+	/* align-items: center; */
+}
+
+.smarterLayout .item {
+	/*
+	 * - "flex" y "flex-basis" solo se aplican a los "flex-items".
+	 * - "flex-basis" el tamaño inicial de un "flex-item".
+	 * - Fijamos el valor inicial al tamaño que queramos los "flex-items" entonces
+	 *   de manera uniforme distribuye el espacio libre acorde con el tamaño.
+	 * - "flex" es el "shorthand" para "flex-grow","flex-basis","flex-shrink".
+	 * - Usando solo un valo en "flex" fijamos el "flex-grow" del "flex-item".
+	 * - El segundo y tercer valor son opcionales.
+	 * - Si solo fijamos un valor en "flex", automáticamente fija el "flex-basis" a 0.
+	 */
+	flex: 1 200px;
+}
+
+.smarterLayout .item-1 {
+	/*
+	 * - "align-self" solo se aplica a los "flex-items".
+	 * - "align-self: flex-start;" alinea el "flex-item" al INICIO del eje.
+	 * - "align-self: flex-end;" alinea el "flex-item" al FINAL del eje.
+	 * - "align-self: center;" alinea el "flex-item" al CENTRO del eje.
+	 */
+	align-self: flex-start;
+}
+
+.smarterLayout .item-2 {
+	flex: 2;
+	align-self: flex-end;
+}
+
+.smarterLayout .item-3 {
+	align-self: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
