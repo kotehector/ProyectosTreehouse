@@ -1,0 +1,64 @@
+/* Con "display: flex;" le decimas al elemento que se convierta
+ * en un "contenedor flex" */
+.nav , .main {
+	display: flex;
+}
+
+.nav {
+	flex-direction: row; /* row-reverse | column | column-reverse */
+	justify-content: space-between; /* flex-end | center  */
+	flex-wrap: wrap; /* wrap-reverse */
+}
+
+.nav li:last-child {
+	margin-left: auto;
+}
+
+.nav li {
+	flex-grow: 1;
+}
+
+.col {
+	flex: 1;
+}
+
+.col-c {
+	flex: 2;
+	order: -1;
+}
+
+.col-b {
+	align-self: stretch; /* flex-end | flex-start |stretch | center */
+}
+
+@media screen and (max-width: 999px) {
+	.main {
+		flex-direction: column;
+	}
+}
+
+
+#main2 {
+	flex-direction: row;
+	-webkit-column-count: 3;
+	-webkit-column-width: 250px;
+	/* columns: 250px 3;*/
+	-webkit-column-gap: 3em;
+	-webkit-column-rule-width: 2px;
+	-webkit-column-rule-style: dotted;
+	-webkit-column-rule-color: #070641;
+	/* column-rule: 2px dotted #070641; */
+}
+
+#main2 h1 {
+	-webkit-column-span: all;
+}
+
+img {
+	display: block;
+	margin: 1.5em 0;
+	max-width: 100%;
+}
+
+
+

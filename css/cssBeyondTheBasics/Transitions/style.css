@@ -1,0 +1,196 @@
+
+body {
+	padding-top: 50px;
+	background: #F5F5F5;
+	color: #FFF;
+	font-family: sans-serif;
+}
+
+/* =======================================================
+****** Transitions, timing functions and delays **********
+======================================================= */
+
+.box {
+	margin: auto;
+	width: 300px;
+	height: 300px;
+	border-radius: 15px;
+	background: steelblue;
+	cursor: pointer;
+	/* Duración de la transición (VUELTA) */
+	/* Si solo lo ponemos en el estado inicial es para ambos */
+	transition-duration: 4s;
+ }
+
+.box:hover {
+	background-color: lightcoral;
+	border-radius: 50%;
+	width: 150px;
+	/* Propiedades que queremos animar */
+	/* transition-property: background, border-radius; */
+	/* transition-property: all (default) */;
+
+	/* Duración de la transición (IDA) */
+	transition-duration: 1s; 
+}
+
+.wrap2 {
+	margin: 15px auto;
+	padding: 15px;
+	width: 850px;
+	height: 300px;
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+}
+
+.box2 {
+	width: 25%;
+	height: 200px;
+	border-radius: 8px;
+	background: #468284;
+	transition-property: margin, background;
+	transition-duration: 1s, .6s;
+	/* ease (default) | ease-in | ease-out | ease-in-out | linear */
+	/* transition-timing-function: ease; */
+	/* Con steps() definimos el nº de pasos que queremos para la transición */
+	/* transition-timing-function: steps(4, end); */
+	/* Con cubic-bezier() creamos la función a nuestro gusto */
+	transition-timing-function: cubic-bezier(.5, -.5, .3, 1.3), ease;
+	transition-delay: 0s, 1s;
+
+	/* Shorthand */
+	/* transition: margin 1s cubic-bezier(.5, -.5, .3, 1.3) 0s, background .6s ease 1s; */
+}
+
+.wrap2:hover .box2 {
+	background: #f08080;
+	margin-left: 75%;
+}
+
+
+/* =======================================================
+********** Transforms: rotate, scale and skew ************
+======================================================= */
+
+.wrap3 {
+	margin: 0 auto;
+	padding: 110px 0;
+	width: 85%;
+	background: #f0fcff;
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+}
+
+.box3 {
+	margin: auto;
+	width: 150px;
+	background: url('mike-transparent.png') no-repeat 0 0;
+	background-size: 150px;
+}
+
+.mike,
+.mike2 {
+	display: block;
+	width: 100%;
+	transition: 1s ease-in-out;
+}
+
+.wrap3:hover .mike {
+	/* Función para rotar elemento. */
+	transform: rotate(2turn);
+	/* Cambiar el origen de la transformación. Default: 50% 50% */
+	/* También acepta palabras:; top, left, right, bottom */
+	transform-origin: 100% 100%;
+
+	/* Función para escalar el elemento: scaleX(),scale(),scaleY() */
+	/* transform: scaleX(1.5); */
+	
+	/* Función para inclinar el elemento: skewY(),skewX(), skew() */
+	/* transform: skew(45deg); */
+}
+
+
+.wrap3:hover .mike2 {
+	/* Función para trasladar el elemento: translateX(), translateY(), translate(); */
+	transform: translate(-100%, 50%) scale(1.5) rotate(25deg);
+}
+
+
+
+/* =======================================================
+********** 3D Transforms: rotate, scale and skew ************
+======================================================= */
+.wrap4 {
+	position: relative;
+	margin: 0 auto;
+	width: 250px;
+	height: 350px;
+	cursor: pointer;
+}
+
+.wrap4 div {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	background-position: 50% 50%;
+	background-size: 150px;
+	background-repeat: no-repeat;
+	box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 1px rgba(0,0,0,.3);
+	font: bold 3em sans-serif;
+	line-height: 350px;
+}
+
+.side-a {
+	background: #498FBC url('mike.png');
+}
+.side-b {
+	background: #33363D url('mike-transparent.png');
+}
+
+body {
+	/* Para que funcione el 3D, le tenemos que decir a la página
+	 * o al elemento que sea la "perpective". SOLO AFECTA A LOS
+	 * ELEMENTOS HIJOS DIRECTOS */ 
+	perspective: 800px;
+	/* Seleccionamos el origen de la persepectiva. Default 50% 50%;*/
+	perspective-origin: center top;
+}
+
+.wrap4 {
+	transition: transform 1s ease-in;
+	/* Ahora los HIJOS DIRECTOS de .wrap4 también tienen perspectiva 3D */
+	transform-style: preserve-3d;
+}
+
+.wrap4 div {
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.side-a {
+	z-index: 100;
+}
+
+.side-b {
+	transform: rotateY(-180deg);
+}
+
+.wrap4:hover {
+	/* Función para trasladar el elemento: rotateX(), rotateY(), rotateZ(); */
+	/* transform: rotateY(45deg); */
+
+	/* Función en para rotar en 3D que acepta 4 valores (x,y,z, deg) */
+	/* transform: rotate3d(1,0,1,65deg); */
+	
+	/* Función para trasladar en 3D que acepta 3 valores (x,y,z) */
+	/* transform: translate3d(100px, 50px , 150px); */
+
+	/* Función para escalar en 3D que acepta 1 valor */
+	/* transform: scaleZ(2) translateZ(-150px); */
+
+	
+	transform: rotateY(180deg);
+}
+
+

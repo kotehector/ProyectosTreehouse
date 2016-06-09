@@ -1,0 +1,79 @@
+
+/*	Animations 
+------------------------------------------ */
+/* Animation para el .boat */
+.boat {
+	animation: rock-boat 3s ease-in-out infinite;
+	/* Número de iteraciones de la animación */
+	/* animation-iteration-count: infinite; */
+}
+
+/* Animation para el .boat::after (steam); */
+.boat::after {
+	animation: steam 4s 2s ease-in-out infinite;
+}
+
+/* Animation para el background (islas) */
+body {
+	animation: bg-move 8s ease-out forwards;
+	/* animation-direction: alternate; */
+	/* animation-fill-mode: both; /* backwards | forwards | both */
+	/* Estado de la animación */
+	/* animation-play-state: paused; */
+}
+
+/* Animation para el .mike (rana) */
+.mike {
+	animation: mike-move 6s 6s ease-out forwards,
+			   mike-float 3.2s infinite;
+}
+
+
+
+/*	Keyframes
+------------------------------------------ */
+
+/* Keyframes para .boat */
+@keyframes rock-boat {
+	/* Si el valor inicial y el final son en el estado normal
+	 *  (valores por defecto en el css) no hace falta ponerlo, 
+	 * se pueden ignorar */
+	/*	0%   { transform: rotate(0) translateY(0); } */
+	50%  { transform: rotate(-5deg) translateY(-10px); } 
+	/* 100% { transform: rotate(0) translateY(0); } */
+}
+
+/* Keyframes para .boat::after steam(humo del barco) */
+@keyframes steam {
+	40%,
+	60%  { opacity: 1  } 
+	100% { transform: translate(-15%, -35%) rotateZ(20deg); } 
+}
+
+/* Keyframes para background (islas) */
+@keyframes bg-move {
+	0%   { background-position:  100% -560px; }
+	100% { background-position: -350% -460px; } 
+}
+
+/* Keyframes para .mike (rana) */
+@keyframes mike-move {
+	100% { left: 12%; } 
+}
+@keyframes mike-float {
+	100% { transform: rotateZ(5deg) translateY(-5px); } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
