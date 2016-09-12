@@ -1,0 +1,36 @@
+/* =================================
+  Transiciones Botón
+==================================== */
+
+.button {
+	color: #4a89ca;
+	border: 2px solid;
+	/* Elegimos las propiedades a animar */
+	transition-property: background, border-radius, color;
+	/* Duración individual para cada propiedad (s,ms)*/
+	transition-duration: .4s, .8s, .4s;
+}
+
+.button:hover {
+	color: #fff;
+	background: #4a89ca;
+	border-radius: 1em;
+}
+
+.button:active {
+	background: #a33830;
+}
+
+/* =================================
+  Transición Foto Overlay
+==================================== */
+
+.photo-overlay {
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: .5s;
+}
+
+.photo-overlay:hover {
+	opacity: 1;
+}

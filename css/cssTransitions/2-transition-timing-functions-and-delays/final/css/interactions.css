@@ -1,0 +1,51 @@
+/* =================================
+  Photo Overlay Transition
+==================================== */
+/* Fijamos la opacidad a 0 y la duración de la transición a 0,5s por defecto */
+.photo-overlay {
+	opacity: 0;
+	transition: .5s;
+}
+/* En el :hover le damos una opacidad del 100% y la transición se aplicará */
+.photo-overlay:hover {
+	opacity: 1;
+}
+
+/* =================================
+  Button Transitions
+==================================== */
+/* Fijamos al btn una opacidad de 0 por defecto y elegimos las propiedas que
+   queremos aplicar la transción */
+.button {
+	opacity: 0;
+	transition: opacity .3s .2s, background .4s .3s, box-shadow .5s 0s;
+	/* Elegimos también la función que le queremos aplicar a la transción */
+	transition-timing-function: ease-out;
+}
+
+/* En el :hover del btn le cambiamos el color  y le aplicamos una sombra */
+.button:hover {
+	background: rgba(74, 137, 202, 1);
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, .7);
+}
+
+/* En el :hover de la máscara de la foto le damos opacidad de 100% al btn */
+.photo-overlay:hover .button {
+	opacity: 1;
+}
+
+/* Fijamos las propiedades, la duración, el retraso y la función de la transición
+   que le vamos a aplicar al icono del btn */
+.btn-icon {
+	transition-property: opacity, left;
+	transition-duration: .5s;
+	transition-delay: .3s;
+	transition-timing-function: ease-in-out, ease-out;
+}
+
+/* En el :hover  del btn le cambiamos la opacidad al 100% y lo movemos un 80%
+   a la izquierda */
+.button:hover .btn-icon {
+	opacity: 1;
+	left: 80%;
+}

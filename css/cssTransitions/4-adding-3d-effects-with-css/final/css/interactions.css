@@ -1,0 +1,72 @@
+/* =================================
+  Button Transitions
+==================================== */
+
+.button {
+	transition: background .3s;
+}
+.button:hover {
+	background: rgba(74,137,202, 1);
+}
+
+/* =================================
+  Photo 3D Transforms & Transitions
+==================================== */
+
+/* Fijamos el wrapper para aplicar la perspectiva 3D */
+.cube-container {
+	box-shadow: 0 18px 40px 5px rgba(0,0,0,.4);
+	perspective: 800px;
+}
+
+/* Le damos a cada lado del cubo  una transicion y se la aplicamos a la transformacion
+   en el :hover. Le aplicamos a cada lada del cubo la propiedad preserve-3d para
+	 que tenga la herencia del wrapper */
+.photo-cube {
+	transition: transform 2s ease-in-out;
+	width: 220px;
+	height: 200px;
+	transform-style: preserve-3d;
+}
+
+/* En el :hover de cada lado del cubo de aplicamos la función de rotar en el ejeY
+   270 grados hacia la izquierda */
+.photo-cube:hover {
+	transform: rotateY(-270deg);
+}
+
+/* Fijamos el ancho y alto de cada contenido dentro de cada lado del cubo y le
+   fijamos una posicion absoluta */
+.front,
+.back,
+.left,
+.right {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+}
+
+/* Movemos la capa .front 110px en el eje Z */
+.front {
+	transform: translate3d(0, 0, 110px);
+}
+
+/* Movemos la capa .back hacia el fondo(110px en el eje Z) y la rotamos 270grados
+   hacia la derecha. Fijamos el origen de la transformación en el centro-izquierdo */
+.back {
+	transform: translateZ(-110px) rotateY(270deg);
+	transform-origin: center left;
+}
+
+/* Rotamos la capa .left 270 grados hacia la izquierda y la movemos en el ejeX 3D
+   110px. Le fijamos el origen en arriba a la derecha */
+.left {
+	transform: rotateY(-270deg) translate3d(110px, 0, 0);
+	transform-origin: top right;
+}
+
+/* Rotamos la capa .right en el ejeZ 110px y la rotamos 180 grados */
+.right {
+	transform: translateZ(-110px) rotateY(180deg);
+}

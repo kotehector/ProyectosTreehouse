@@ -1,0 +1,91 @@
+/* =================================
+  Photo Overlay Transitions
+==================================== */
+/* Fijamos por defecto la opacidad de la máscara de la foto a 0 y le damos una
+   transición de 0,5s a la opacidad */
+.photo-overlay {
+	opacity: 0;
+	transition: opacity .5s;
+}
+/* En el :hover de la máscara aplicamos un opacidad del 100% */
+.photo-overlay:hover {
+	opacity: 1;
+}
+
+/* =================================
+  Button Transitions
+==================================== */
+
+.button {
+	transition: background .3s, color .3s;
+}
+.button:hover {
+	color: #fff;
+	background: #4a89ca;
+}
+
+/* =================================
+  Image Transforms & Transitions
+==================================== */
+
+/* -- Row 1 --------- */
+
+img {
+	/* Elegimos por defecto para la TRANSICION la PROPIEDAD TRANSFORM y le damos
+	   una duración de 0,5s y le aplicamos una función personalizada */
+	transition: transform .5s cubic-bezier(.7,-0.39,.31,1.38);
+}
+
+img:hover {
+	/* En el :hover de la img aplicamos las FUNCIONES ROTATE para girarla 5grados
+	   a la izquierda y SCALE para amplicar la foto un 10% */
+	transform: rotate(-5deg) scale(1.1);
+}
+
+/* -- Row 2 --------- */
+
+/* Elegimos por defecto el punto de origen donde se aplicara la transfromación,
+   siendo en este caso 0 en el eje X y 0 en el eje Y (arriba a la izquierda) */
+.photo img {
+	transform-origin: 0 0;
+}
+
+/* En el :hover del wrapper de la img le aplicamos a la img la FUCNION SCALE
+   para ampliarla un 20% desde arriba a la derecha */
+.photo:hover img {
+	transform: scale(1.2);
+}
+
+/* -- Row 3 --------- */
+
+/* Elegimos  por defecto las wrapper que le vamos aplicar la transción y las cuales
+   marcan los puntos de origen y la propiedad TRANSFORM con una duración de 0,6s
+	 y una función predefinida */
+.slide .photo-overlay,
+.slide img {
+	transition: transform .6s ease-out;
+}
+
+/* Elegimos la función TRANSLATEX para mover un elemento. Movemos el wrapper
+   de la img el 100% hacia la izquierda */
+.slide .photo-overlay {
+	transform: translateX(-100%);
+}
+
+/* En el :hover del wrapper del slide utilizamos la función TRANSALATEX para
+   mover el wrapper de la img al punto 0 */
+.slide:hover .photo-overlay {
+	transform: translateX(0);
+}
+
+/* En el :hover del wrapper del slide le aplicamos a la img la funcion TRANLATEX
+   para moverla el 100% hacia la derecha*/
+.slide:hover img {
+	transform: translateX(100%);
+}
+
+/* -- Logo ---------- */
+
+.logo:hover {
+	transform: rotate(-20deg);
+}
